@@ -4,9 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Avash Ghimire</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
   <style>
+    :root {
+      --bg-dark: #1e1e2f;
+      --bg-light: #f7f8fa;
+      --text-dark: #f5f5f5;
+      --text-light: #1a1a1a;
+    }
+
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
@@ -15,18 +23,14 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #8E44AD, #2980B9, #27AE60, #F39C12, #C0392B, #16A085, #2C3E50);
-      background-size: 400% 400%;
-      animation: gradientFlow 15s ease infinite;
-      color: #fff;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      25% { background-position: 100% 0%; }
-      50% { background-position: 100% 100%; }
-      75% { background-position: 0% 100%; }
-      100% { background-position: 0% 50%; }
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-light);
     }
 
     header {
@@ -38,12 +42,10 @@
       font-family: 'Lobster', cursive;
       font-size: 3.5rem;
       margin: 0;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+      font-size: 1.1rem;
       margin-top: 10px;
     }
 
@@ -51,12 +53,12 @@
       margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 25px;
+      gap: 20px;
     }
 
     .icons a {
-      color: #fff;
-      font-size: 1.8rem;
+      color: inherit;
+      font-size: 1.6rem;
       transition: transform 0.3s, opacity 0.3s;
     }
 
@@ -74,34 +76,66 @@
     section h2 {
       font-size: 2rem;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .project {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
       backdrop-filter: blur(4px);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
-    .project h3 {
-      margin-top: 0;
+    .project:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     footer {
       text-align: center;
       padding: 40px 20px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.6;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: inherit;
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      backdrop-filter: blur(5px);
+      transition: background 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    body.light .project {
+      background: #fff;
+      color: #111;
+    }
+
+    body.light .project:hover {
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <button class="toggle-btn" onclick="toggleTheme()">🌗 Theme</button>
+
+  <header data-aos="fade-down">
     <h1>Avash Ghimire</h1>
-    <p>Developer • Designer • Dreamer</p>
+    <p>Dev • Designer • Dreamer</p>
     <div class="icons">
       <a href="https://www.linkedin.com/in/avashghimire01/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://www.instagram.com/avas.exe/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -109,28 +143,37 @@
     </div>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>
-      I'm a tech enthusiast based in Canada who loves building cool things with code and visuals.
-      Whether it's a web project, a playlist, or a creative experiment—I put thought and heart into it.
+      I'm a creative technologist based in Canada. I like building fun, thoughtful digital projects that blend code, design, and storytelling. 
     </p>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up" data-aos-delay="200">
     <h2>Projects</h2>
     <div class="project">
-      <h3>My Portfolio</h3>
-      <p>A personal site to showcase my skills, resume, and creative works. Built with pure HTML/CSS.</p>
+      <h3>Portfolio Website</h3>
+      <p>This site you're on right now. Made with HTML, CSS, and JavaScript — clean, animated, and lightweight.</p>
     </div>
     <div class="project">
       <h3>Spotify Visualizer (Coming Soon)</h3>
-      <p>A web app that turns your current Spotify track into a dynamic audio visualizer.</p>
+      <p>A real-time audio visualizer connected to your Spotify playlist. React + Web Audio API based.</p>
     </div>
   </section>
 
-  <footer>
+  <footer data-aos="fade-in">
     © 2025 Avash Ghimire. Built with ❤️
   </footer>
+
+  <!-- JS scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+    }
+  </script>
 </body>
 </html>
