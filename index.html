@@ -1,95 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyProfile</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avash Ghimire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, 
-                #8E44AD,   /* Rich Purple */
-                #2980B9,   /* Deep Blue */
-                #27AE60,   /* Emerald Green */
-                #F39C12,   /* Vibrant Orange */
-                #C0392B,   /* Deep Red */
-                #16A085,   /* Teal */
-                #2C3E50    /* Dark Navy */
-            );
-            background-size: 400% 400%;
-            animation: gradientFlow 15s ease infinite;
-            color: #fff;
-            overflow: hidden;
-        }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #8E44AD, #2980B9, #27AE60, #F39C12, #C0392B, #16A085, #2C3E50);
+      background-size: 400% 400%;
+      animation: gradientFlow 15s ease infinite;
+      color: #fff;
+    }
 
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            25% {
-                background-position: 100% 0%;
-            }
-            50% {
-                background-position: 100% 100%;
-            }
-            75% {
-                background-position: 0% 100%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 100% 0%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        h1 {
-            font-size: 4rem;
-            font-family: 'Lobster', cursive;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            z-index: 10;
-        }
+    header {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
 
-        .icons {
-            margin-top: 20px;
-            display: flex;
-            gap: 20px;
-            z-index: 10;
-        }
+    header h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
 
-        .icons a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 2rem;
-            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
-        }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
 
-        .icons a:hover {
-            transform: scale(1.3);
-            opacity: 0.9;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-        }
+    .icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
 
-        .icons i {
-            padding: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    .icons a {
+      color: #fff;
+      font-size: 1.8rem;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .icons a:hover {
+      transform: scale(1.2);
+      opacity: 0.85;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .project h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
+
+  <header>
     <h1>Avash Ghimire</h1>
+    <p>Developer • Designer • Dreamer</p>
     <div class="icons">
-        <a href="https://www.linkedin.com/in/avashghimire01/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/avas.exe/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://open.spotify.com/user/zfdm5kgvs0by06rwjs37ixfhl?si=5685bff8409845c8" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://www.linkedin.com/in/avashghimire01/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/avas.exe/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://open.spotify.com/user/zfdm5kgvs0by06rwjs37ixfhl?si=5685bff8409845c8" target="_blank"><i class="fab fa-spotify"></i></a>
     </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a tech enthusiast based in Canada who loves building cool things with code and visuals.
+      Whether it's a web project, a playlist, or a creative experiment—I put thought and heart into it.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>My Portfolio</h3>
+      <p>A personal site to showcase my skills, resume, and creative works. Built with pure HTML/CSS.</p>
+    </div>
+    <div class="project">
+      <h3>Spotify Visualizer (Coming Soon)</h3>
+      <p>A web app that turns your current Spotify track into a dynamic audio visualizer.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Avash Ghimire. Built with ❤️
+  </footer>
 </body>
 </html>
